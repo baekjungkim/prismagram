@@ -10,6 +10,9 @@ yarn add babel-node -D
 yarn add dotenv
 yarn add @babel/{node,preset-env}
 yarn add @babel/core
+yarn add morgan
+yarn add graphql-tools
+yarn add merge-graphql-schemas
 ```
 
 ## What?
@@ -27,3 +30,12 @@ yarn add @babel/core
   
 1. @babel/core
    - babel-core는 babel이 실제 동작하는 코드이다.
+
+1. morgan
+   - 누군가가 api로 무언가를 요청할때마다 미들웨어가 그것을 가로채 기록을 한다음 그 요청이 다음 단계로 진행되도록 한다. 모든 요청을 콘솔에 로깅(기록)하는 미들웨어
+
+1. graphql-tools
+   - 스키마와 resolve를 분리해 주는 구조를 만들어 주는 패키지이다.
+  
+1. merge-graphql-schemas
+   - 모듈화된 GraphQL 스키마와 resolver 객체의 병합이 용이하도록 지원하는 유틸리티 라이브러리.
