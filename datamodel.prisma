@@ -11,13 +11,13 @@ type User {
   likes: [Like!]!
   comments: [Comment!]!
   chats: [Chat!]!
-  loginSecret: String!
 }
 
 type Post {
   id: ID! @id
   location: String
   caption: String!
+  user: User!
   files: [File!]!
   likes: [Like!]!
   comments: [Comment!]!
