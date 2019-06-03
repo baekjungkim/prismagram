@@ -31,6 +31,9 @@ yarn add morgan
 yarn add graphql-tools
 yarn add merge-graphql-schemas
 yarn add global prisma
+yarn add nodemailer
+yarn add mailgun-js
+yarn add nodemailer-sendgrid-transport
 ```
 
 ## What?
@@ -57,7 +60,14 @@ yarn add global prisma
   
 8. merge-graphql-schemas
    - 모듈화된 GraphQL 스키마와 resolver 객체의 병합이 용이하도록 지원하는 유틸리티 라이브러리.
+  
+9. nodemailer
+   - 웹 서비스에서 메일 전송은 회원의 비밀번호 찾기, 프로모션 발송, 가입 인증 등 여러 방면에서 활용할 수있다. nodemailer는 node서버에서 메일을 보낼 수 있는 메일 전송 모듈이다.
+   - Gmail 이용시 하루 최대 500건 사용 가능하므로 소규모 사이트에서 사용하기 좋다.
+   - 많은 메일을 발송해야 한다면 AWS SES, Mailgun 같은 메일 서비스를 이용해야 한다.
 
+10. nodemailer-sendgrid-transport, mailgun
+   - mailing system으로 mailgun이나 sendgrid 둘중 하나 선택하여 사용 해야한다. 현재 프로젝트에 두개 다 구현함(default: sendgrid)
 
 ## [Prisma](https://www.prisma.io/)
 ```
