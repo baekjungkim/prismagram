@@ -4,7 +4,7 @@ Instagram clone with Express + Prisma + React and React Native
 ## User Flow
 
 - [x] Create account
-- [ ] Request Secret
+- [x] Request Secret
 - [ ] Confirm Secret (Login)
 - [ ] Like / Unlike a photo
 - [ ] Comment on a photo
@@ -34,40 +34,52 @@ yarn add global prisma
 yarn add nodemailer
 yarn add mailgun-js
 yarn add nodemailer-sendgrid-transport
+yarn add passport
+yarn add passport-jwt
+yarn add passport-facebook
+yarn add jsonwebtoken
 ```
 
 ## What?
 1. babel
-   - babel은 자바스크립트 컴파일러다. 입력은 자바스크립트 코드고 출력도 자바스크립트 코드다. 최신 버전의 자바스크립트 문법은 브라우저가 이해하지 못하기 때문에 babel이 브라우저가 이해할 수 있는 문법으로 변환해준다. ES6, ES7 등의 최신 문법을 사용해서 코딩을 할 수 있기 때문에 생산성이 향상된다.
+  - babel은 자바스크립트 컴파일러다. 입력은 자바스크립트 코드고 출력도 자바스크립트 코드다. 최신 버전의 자바스크립트 문법은 브라우저가 이해하지 못하기 때문에 babel이 브라우저가 이해할 수 있는 문법으로 변환해준다. ES6, ES7 등의 최신 문법을 사용해서 코딩을 할 수 있기 때문에 생산성이 향상된다.
 
 2. nodemon
-   - nodemon은 프로젝트 폴더의 파일들을 모니터링하고 있다가 파일이 수정될 경우 자동으로 서버를 리스타트 시켜준다. nodemon을 위해서 소스에 다른 설정을 추가할 필요도 없기 때문에 상당히 편리하게 사용할 수 있다. 
+  - nodemon은 프로젝트 폴더의 파일들을 모니터링하고 있다가 파일이 수정될 경우 자동으로 서버를 리스타트 시켜준다. nodemon을 위해서 소스에 다른 설정을 추가할 필요도 없기 때문에 상당히 편리하게 사용할 수 있다. 
 
 3. dotenv
-   - Node.js 서비스의 환경변수를 사용할 때 dotenv를 쓴다. 런타임 때 중요한 변수들을 코드로부터 분리하는 방법인데 .env라는 파일에 원하는 변수들을 선언하고 서비스가 시작될 때 읽어들여 필요한 곳에서 사용하는 방식이다. 
+  - Node.js 서비스의 환경변수를 사용할 때 dotenv를 쓴다. 런타임 때 중요한 변수들을 코드로부터 분리하는 방법인데 .env라는 파일에 원하는 변수들을 선언하고 서비스가 시작될 때 읽어들여 필요한 곳에서 사용하는 방식이다. 
   
 4. @babel/preset-env
-   - babel-preset-env는 babel이 동작할 때 지원범위가 어느정도까지 되어야 하는지에 대해 지정하도록 만들어주는 패키지이다.
+  - babel-preset-env는 babel이 동작할 때 지원범위가 어느정도까지 되어야 하는지에 대해 지정하도록 만들어주는 패키지이다.
   
 5. @babel/core
-   - babel-core는 babel이 실제 동작하는 코드이다.
+  - babel-core는 babel이 실제 동작하는 코드이다.
 
 6. morgan
-   - 누군가가 api로 무언가를 요청할때마다 미들웨어가 그것을 가로채 기록을 한다음 그 요청이 다음 단계로 진행되도록 한다. 모든 요청을 콘솔에 로깅(기록)하는 미들웨어
+  - 누군가가 api로 무언가를 요청할때마다 미들웨어가 그것을 가로채 기록을 한다음 그 요청이 다음 단계로 진행되도록 한다. 모든 요청을 콘솔에 로깅(기록)하는 미들웨어
 
 7. graphql-tools
-   - 스키마와 resolve를 분리해 주는 구조를 만들어 주는 패키지이다.
+  - 스키마와 resolve를 분리해 주는 구조를 만들어 주는 패키지이다.
   
 8. merge-graphql-schemas
-   - 모듈화된 GraphQL 스키마와 resolver 객체의 병합이 용이하도록 지원하는 유틸리티 라이브러리.
+  - 모듈화된 GraphQL 스키마와 resolver 객체의 병합이 용이하도록 지원하는 유틸리티 라이브러리.
   
 9. nodemailer
-   - 웹 서비스에서 메일 전송은 회원의 비밀번호 찾기, 프로모션 발송, 가입 인증 등 여러 방면에서 활용할 수있다. nodemailer는 node서버에서 메일을 보낼 수 있는 메일 전송 모듈이다.
-   - Gmail 이용시 하루 최대 500건 사용 가능하므로 소규모 사이트에서 사용하기 좋다.
-   - 많은 메일을 발송해야 한다면 AWS SES, Mailgun 같은 메일 서비스를 이용해야 한다.
+  - 웹 서비스에서 메일 전송은 회원의 비밀번호 찾기, 프로모션 발송, 가입 인증 등 여러 방면에서 활용할 수있다. nodemailer는 node서버에서 메일을 보낼 수 있는 메일 전송 모듈이다.
+  - Gmail 이용시 하루 최대 500건 사용 가능하므로 소규모 사이트에서 사용하기 좋다.
+  - 많은 메일을 발송해야 한다면 AWS SES, Mailgun 같은 메일 서비스를 이용해야 한다.
 
 10. nodemailer-sendgrid-transport, mailgun
-   - mailing system으로 mailgun이나 sendgrid 둘중 하나 선택하여 사용 해야한다. 현재 프로젝트에 두개 다 구현함(default: sendgrid)
+  - mailing system으로 mailgun이나 sendgrid 둘중 하나 선택하여 사용 해야한다. 현재 프로젝트에 두개 다 구현함(default: sendgrid)
+
+11. passportjs
+  - 패스포트는 각 앱이 구글로 가입할거냐, 페북으로 가입할거냐, 로컬에서 직접 가입할거냐 등 인증 요구사항을 가지는 것을 인지하고 전략 (strategies)으로 알려져 있는 인증 메커니즘을 각 모듈로 패키지화 해서 제공하고 있다. 즉, 앱은 패스포트에서 지원하는 전략을 선택해 의존성 없이 독립적으로 이용가능하다. 그래서 인증이라는 기능의 복잡성에도 불구하고 코드는 복잡해지지 않는다.
+
+12. jsonwebtoken
+  - JWT 는 JSON Web Token의 약자로 전자 서명 된 URL-safe (URL로 이용할 수있는 문자 만 구성된)의 JSON. 전자 서명은 JSON 의 변조를 체크 할 수 있게되어 있으며 JWT는 속성 정보 (Claim)를 JSON 데이터 구조로 표현한 토큰으로 RFC7519 표준 입니다.
+  - JWT는 서버와 클라이언트 간 정보를 주고 받을 때 Http 리퀘스트 헤더에 JSON 토큰을 넣은 후 서버는 별도의 인증 과정없이 헤더에 포함되어 있는 JWT 정보를 통해 인증한다. 이때 사용되는 JSON 데이터는 URL-Safe 하도록 URL에 포함할 수 있는 문자만으로 만든다.
+  - JWT는 HMAC 알고리즘을 사용하여 비밀키 또는 RSA를 이용한 Public Key/ Private Key 쌍으로 서명할 수 있다.
 
 ## [Prisma](https://www.prisma.io/)
 ```
