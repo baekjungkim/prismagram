@@ -1,4 +1,4 @@
-import { prisma } from "../../../generated/prisma-client";
+import { prisma } from "../../generated/prisma-client";
 
 export default {
   User: {
@@ -33,6 +33,13 @@ export default {
       } catch {
         return false;
       }
+    },
+    likeCount: parent => {
+      const { id: parentId } = parent;
+      return prisma
+        .likesConnection({ where: { post: { id: parentId } } })
+        .aggregate()
+        .count();
     }
   }
 };
