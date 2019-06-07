@@ -55,7 +55,7 @@ type File {
 
 type Chat {
   id: ID! @id
-  prticipants: [User!]!
+  participants: [User!]!
   messages: [Message!]!
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt

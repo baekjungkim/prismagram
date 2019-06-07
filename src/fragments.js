@@ -42,3 +42,12 @@ export const FULL_POST_FRAGMENT = `
     }
   }
 `;
+
+export const CHAT_FRAGMENT = `
+  fragment ChatParts on Chat {
+    id
+    participants {
+      id
+    }
+  }
+`;

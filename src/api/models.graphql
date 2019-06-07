@@ -60,7 +60,7 @@ type File {
 
 type Chat {
   id: ID!
-  prticipants: [User!]!
+  participants: [User!]!
   messages: [Message!]!
   createdAt: String
   updatedAt: String
