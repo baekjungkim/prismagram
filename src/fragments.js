@@ -1,6 +1,7 @@
 export const USER_FRAGMENT = `
     id
     username
+    avatar
 `;
 
 export const COMMENT_FRAGMENT = `
@@ -19,6 +20,17 @@ export const FILE_FRAGMENT = `
 export const LIKE_FRAGMENT = `
     id
     user {
+      ${USER_FRAGMENT}
+    }
+`;
+
+export const MESSAGE_FRAGMENT = `
+    id
+    text
+    from {
+      ${USER_FRAGMENT}
+    }
+    to {
       ${USER_FRAGMENT}
     }
 `;
@@ -47,7 +59,10 @@ export const CHAT_FRAGMENT = `
   fragment ChatParts on Chat {
     id
     participants {
-      id
+      ${USER_FRAGMENT}
+    }
+    messages {
+      ${MESSAGE_FRAGMENT}
     }
   }
 `;
