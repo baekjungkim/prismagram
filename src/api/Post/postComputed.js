@@ -13,12 +13,14 @@ export default {
         return false;
       }
     },
-    likeCount: parent => {
-      const { id: parentId } = parent;
-      return prisma
+    likeCount: parent =>
+      prisma
         .likesConnection({ where: { post: { id: parentId } } })
         .aggregate()
-        .count();
-    }
+        .count(),
+    likes: parent => prisma.post({ id: parent.id }).likes(),
+    files: parent => prisma.post({ id: parent.id }).files(),
+    comments: parent => prisma.post({ id: parent.id }).comments(),
+    user: parent => prisma.post({ id: parent.id }).user()
   }
 };

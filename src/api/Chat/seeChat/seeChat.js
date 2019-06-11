@@ -1,5 +1,4 @@
 import { prisma } from "../../../../generated/prisma-client";
-import { CHAT_FRAGMENT, MESSAGE_FRAGMENT } from "../../../fragments";
 
 export default {
   Query: {
@@ -13,7 +12,7 @@ export default {
         }
       });
       if (canSee) {
-        return prisma.chat({ id: chatId }).$fragment(CHAT_FRAGMENT);
+        return prisma.chat({ id: chatId });
       } else {
         throw Error("You can't see this");
       }
